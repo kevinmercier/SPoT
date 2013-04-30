@@ -1,0 +1,111 @@
+
+/* -----------------------------------------------------------------------------------------------------------------------------------
+					MIXINS
+-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.box-shadow-shortcode( @horizontal-length, @vertical-length, @blue-radius, @spread, @shadow-color ){
+	-webkit-box-shadow: @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+	-moz-box-shadow: @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+	box-shadow: @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+}
+
+.box-shadow-shortcode-inset( @horizontal-length, @vertical-length, @blue-radius, @spread, @shadow-color ){
+	-webkit-box-shadow: inset @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+	-moz-box-shadow: inset @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+	box-shadow: inset @horizontal-length @vertical-length @blue-radius @spread @shadow-color;
+}
+
+.gradient-texture (@startColor: #eee, @endColor: white, @baseurl: null){
+	background-color: @startColor;
+	background-image: url("@{baseurl}"),-webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background-image: url("@{baseurl}"),-webkit-linear-gradient(top, @startColor, @endColor);
+	background-image: url("@{baseurl}"),-moz-linear-gradient(top, @startColor, @endColor); 
+	background-image: url("@{baseurl}"),-ms-linear-gradient(top, @startColor, @endColor);
+	background-image: url("@{baseurl}"), -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.animate(@variable, @duration, @type){
+	-webkit-transition:@variable @duration @type;  
+	-moz-transition:@variable @duration @type;  
+	-o-transition:@variable @duration @type;  
+	transition:@variable @duration @type; 
+}
+
+.border-box(){
+	box-sizing: border-box; /* css3 rec */
+	-moz-box-sizing: border-box; /* ff2 */
+	-ms-box-sizing: border-box; /* ie8 */
+	-webkit-box-sizing: border-box; /* safari3 */
+	-khtml-box-sizing: border-box; /* konqueror */
+	*behavior:url("../scripts/boxsizing.htc");
+}
+
+.gradient_angle (@degrees: -135deg, @startColor: #eee, @endColor: white) {
+	background: @startColor; /* Old browsers */
+	background: -moz-linear-gradient(@degrees, @startColor 0%, @endColor 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,@startColor), color-stop(100%,@endColor)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(@degrees, @startColor 0%,@endColor 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@degrees, @startColor 0%,@endColor 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@degrees, @startColor 0%,@endColor 100%); /* IE10+ */
+	background: linear-gradient(@degrees, @startColor 0%,@endColor 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@startColor', endColorstr='@endColor',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.rotate( @degrees:-135deg ){
+	-moz-transform: rotate(@degrees);
+	-webkit-transform: rotate(@degrees);
+	-o-transform: rotate(@degrees);
+	-ms-transform: rotate(@degrees);
+	transform: rotate(@degrees); 
+}
+
+/*
+.curveshadow{
+	position: relative;
+	background-color: #fff;
+	z-index: 4;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.curveshadow:before{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg) skew(-0deg);
+	-moz-transform: rotate(-3deg) skew(-0deg);
+	-ms-transform: rotate(-3deg) skew(-0deg);
+	-o-transform: rotate(-3deg) skew(-0deg);
+	transform: rotate(-3deg) skew(-0deg);
+}
+.curveshadow:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	bottom: 15px;
+	right: 10px;
+	width: 50%;
+	height: 20%;
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(3deg) skew(0deg);
+	-moz-transform: rotate(3deg) skew(0deg);
+	-ms-transform: rotate(3deg) skew(0deg);
+	-o-transform: rotate(3deg) skew(0deg);
+	transform: rotate(3deg) skew(0deg);
+}
+*/
+
+
